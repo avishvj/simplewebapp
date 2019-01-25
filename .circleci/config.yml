@@ -22,9 +22,9 @@ jobs:
       services:
       - docker
     steps:
-      - run: docker login --email=$HEROKU_LOGIN --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com
-      - run: docker build --rm=false -t registry.heroku.com/{$APP_NAME}/web .
-      - run: docker push registry.heroku.com/{$APP_NAME}/web:latest
+      - run: docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
+#      - run: docker build --rm=false -t registry.heroku.com/{$APP_NAME}/web .
+#      - run: docker push registry.heroku.com/{$APP_NAME}/web:latest
 
 workflows:
   version: 2
