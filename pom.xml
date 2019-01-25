@@ -41,7 +41,6 @@
                 <configuration>
                     <source>10</source>
                     <target>10</target>
-                    <!--useSystemClassLoader>false</useSystemClassLoader-->
                 </configuration>
             </plugin>
             <plugin>
@@ -51,7 +50,6 @@
                     <argLine>
                         -javaagent:${settings.localRepository}/org/jmockit/jmockit/1.44/jmockit-1.44.jar
                     </argLine>
-                    <!-- ... -->
                 </configuration>
             </plugin>
             <plugin>
