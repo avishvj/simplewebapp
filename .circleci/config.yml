@@ -24,9 +24,6 @@ jobs:
 
     steps:
       - run: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_NAME.git master
-#      - run: docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
-#      - run: docker build registry.heroku.com/$APP_NAME/web
-#      - run: docker push registry.heroku.com/$APP_NAME/web:latest
 
 workflows:
   version: 2
