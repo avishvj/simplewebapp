@@ -24,8 +24,8 @@ jobs:
 
     steps:
       - run: docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
-      - run: docker build --rm=false registry.heroku.com/${APP_NAME}/web .
-      - run: docker push registry.heroku.com/${APP_NAME}/web:latest
+      - run: docker build registry.heroku.com/$APP_NAME/web
+      - run: docker push registry.heroku.com/$APP_NAME/web:latest
 
 workflows:
   version: 2
