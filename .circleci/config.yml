@@ -16,7 +16,7 @@ test:
 deploy:
   steps:
     - name: Heroku
-    - command: - dpl --provider=heroku --app=ajc4617-simplewebapp --api-key=${HerokuID}
+    - command: dpl --provider=heroku --app=ajc4617-simplewebapp --api-key=${HerokuID}
 
 
 stages:
