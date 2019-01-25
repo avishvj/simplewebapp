@@ -1,25 +1,31 @@
 # Java Maven CircleCI 2.0 configuration file
-build:
-  steps:
-  - checkout
-  - run:
-      name: Maven Compile
-      command: mvn compile
 
-test:
-  steps:
+jobs:
+  build:
+    steps:
     - checkout
     - run:
-        name: Test
-        command: mvn test
+        name: Maven Compile
+        command: mvn compile
 
-deploy:
-  steps:
-    - name: Heroku
-    - command: dpl --provider=heroku --app=ajc4617-simplewebapp --api-key=${HerokuID}
+  test:
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: mvn test
+
+  deploy:
+    steps:
+      - name: Heroku
+      - command: dpl --provider=heroku --app=ajc4617-simplewebapp --api-key=${HerokuID}
 
 
-stages:
-  - build
-  - test
-  - deploy
+workflows:
+  build_test_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy
