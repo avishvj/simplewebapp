@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cicleci/openjdk:11-jdk
+      - image: circleci/openjdk:11-jdk
     steps:
     - checkout
     - run: mvn compile
@@ -11,7 +11,7 @@ jobs:
 
   test:
     docker:
-      - image: cicleci/openjdk:11-jdk
+      - image: circleci/openjdk:11-jdk
     steps:
       - checkout
       - run: mvn test
