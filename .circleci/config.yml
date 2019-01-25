@@ -18,6 +18,9 @@ jobs:
 
 
   deployment:
+    machine:
+      services:
+      - docker
     steps:
       - run: docker login --email=$HEROKU_LOGIN --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com
       - run: docker build --rm=false -t registry.heroku.com/{$APP_NAME}/web .
