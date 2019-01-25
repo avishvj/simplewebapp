@@ -23,10 +23,9 @@ jobs:
       - docker
 
     steps:
-      - run: dpl --provider=heroku --app=ajc4617-simplewebapp --api-key=$HEROKU_API_KEY
-#      - run: docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
-#      - run: docker build --rm false registry.heroku.com/{$APP_NAME}/web .
-#      - run: docker push registry.heroku.com/{$APP_NAME}/web:latest
+      - run: docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
+      - run: docker build --rm=false registry.heroku.com/${APP_NAME}/web .
+      - run: docker push registry.heroku.com/${APP_NAME}/web:latest
 
 workflows:
   version: 2
