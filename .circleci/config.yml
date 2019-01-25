@@ -18,8 +18,7 @@ jobs:
 
 
   deployment:
-    staging:
-      branch: master
+    steps:
       commands:
       - docker login --email=$HEROKU_LOGIN --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com
       - docker build --rm=false -t registry.heroku.com/{$APP_NAME}/web .
