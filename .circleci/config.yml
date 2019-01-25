@@ -23,6 +23,7 @@ jobs:
       - docker
 
     steps:
+      - checkout
       - run:
           name: Heroku deploy
           command: |
